@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
 export function Predictions(props){
-    const [predictedHome, setPredictedHome] = useState(0);
-    const [predictedAway, setPredictedAway] = useState(0);
+    const [predictedHome, setPredictedHome] = useState();
+    const [predictedAway, setPredictedAway] = useState();
     const handleClick = () => {
         props.setScores(predictedHome, predictedAway);
     }
