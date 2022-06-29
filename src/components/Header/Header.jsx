@@ -10,7 +10,7 @@ export function Header(){
     return(
         <div className="header">
             <div className="logo">
-                <img src={homepageicon}/>
+                <img src={homepageicon} alt="alt"/>
             </div>
             <div className="logos"> 
                 <br/>

@@ -58,6 +58,8 @@ export function MatchCard(props){
         let localMatch = matchList[Math.floor(Math.random()*matchList.length)]
         console.log(localMatch);
         setMatch(localMatch);
+        setPredictedHome();
+        setPredictedAway();
     }
 
     const goToNextGame = () =>{

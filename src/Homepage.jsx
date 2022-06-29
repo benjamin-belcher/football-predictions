@@ -18,7 +18,7 @@ export function Homepage(){
         <>
             <Header/>
             <div className="PremierLeagueLogo">
-                <img src={premierLeaugeLogo} className="PLlogo"/>
+                <img src={premierLeaugeLogo} className="PLlogo" alt="PL"/>
                 <h1 className="title">
                     Premier League
                 </h1> 
