@@ -26,15 +26,16 @@ export function MatchCard(props){
     }, [score])
 
     const compareScores = (home, away) => {
-        if(home === match.score.fullTime.home && away === match.score.fullTime.away){
+        debugger;
+        if(home == match.score.fullTime.home && away == match.score.fullTime.away){
             setSuccessText("You Guessed Both Scores Right!");
             setScore(score+2);
         }
-        else if(home === match.score.fullTime.home){
+        else if(home == match.score.fullTime.home){
             setSuccessText("You Guessed The Home Score Right!");
             setScore(score+1);
         }
-        else if(away === match.score.fullTime.away){
+        else if(away == match.score.fullTime.away){
             setSuccessText("You Guessed The Away Score Right!");
             setScore(score+1);
         }
@@ -60,6 +61,8 @@ export function MatchCard(props){
         setMatch(localMatch);
         setPredictedHome();
         setPredictedAway();
+        setSuccessText("");
+        setScore(0);
     }
 
     const goToNextGame = () =>{

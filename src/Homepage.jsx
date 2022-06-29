@@ -8,7 +8,7 @@ export function Homepage(){
     const [score, setScore] = useState(0);
     const handleSetScore = (s) =>{
         console.log("Scoree ", s)
-        setScore(s);
+        setScore(score + s);
     }
 
     React.useEffect(() =>{
