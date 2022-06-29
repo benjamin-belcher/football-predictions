@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./styles.css";
 
 export function Predictions(props){
     const [predictedHome, setPredictedHome] = useState();
@@ -17,9 +18,9 @@ export function Predictions(props){
 
     return(
         <div className="MatchWeek1Total">
-            <input type="number" placeholder="Predicted Home Score" required value={predictedHome} onChange={(e)=> {handlePredictedHome(e)}}/>
-            <input type="number" placeholder="Predicted Away Score" required value={predictedAway} onChange={(e)=>{handlePredictedAway(e)}}/>
-            <button onClick={handleClick}>
+            <input className="FullWidthInput" type="number" placeholder="Predicted Home Score" required value={predictedHome} onChange={(e)=> {handlePredictedHome(e)}}/>
+            <input className="FullWidthInput" type="number" placeholder="Predicted Away Score" required value={predictedAway} onChange={(e)=>{handlePredictedAway(e)}}/>
+            <button className="FullWidthInput" onClick={handleClick}>
                 See Scores
             </button>
     </div>

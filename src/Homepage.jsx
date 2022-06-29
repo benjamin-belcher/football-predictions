@@ -15,13 +15,15 @@ export function Homepage(){
         console.log("Score updated ", score);
     }, [score])
     return(
-        <>
+        <div className="TopDiv">
             <Header/>
             <div className="PremierLeagueLogo">
+                <div className="PremierLeagueDiv">
                 <img src={premierLeaugeLogo} className="PLlogo" alt="PL"/>
                 <h1 className="title">
                     Premier League
                 </h1> 
+                </div>
                 <div className="TotalPointsContainer">
                     <div className="TotalPointsCircle">
                         <span className="PointsValue">
@@ -31,6 +33,6 @@ export function Homepage(){
                 </div>
             </div> 
             <MatchCard handleSetScore={handleSetScore}/>
-        </>
+        </div>
     )
 }
