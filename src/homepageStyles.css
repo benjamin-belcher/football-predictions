@@ -1,0 +1,26 @@
+.PremierLeagueLogo{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.title{
+    color: #3D195B;
+    margin-left: 1em;
+}
+.TotalPointsCircle{
+    border-radius: 50%;
+    border-color: #3D195B;
+    border-width: 2px;
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+}
+.PointsValue{
+    color: #3D195B;
+    font-size: 72px;
+    padding-left: 27px;
+}
+.PLlogo{
+    height:120px;
+    width:100px;
+}
