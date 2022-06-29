@@ -7,7 +7,6 @@ export function MatchCard(props){
     const [data, setData] = useState([]);
     const [predictedHome, setPredictedHome] = useState();
     const [predictedAway, setPredictedAway] = useState();
-    const [points, setPoints] = useState(0);
     const [showActualScore, setShowActualScore] = useState(false);
     const [score, setScore]  = useState(0);
     const [match, setMatch] = useState();
@@ -27,29 +26,25 @@ export function MatchCard(props){
     }, [score])
 
     const compareScores = (home, away) => {
-        if(home == match.score.fullTime.home && away == match.score.fullTime.away){
+        if(home === match.score.fullTime.home && away === match.score.fullTime.away){
             setSuccessText("You Guessed Both Scores Right!");
             setScore(score+2);
         }
-        else if(home == match.score.fullTime.home){
+        else if(home === match.score.fullTime.home){
             setSuccessText("You Guessed The Home Score Right!");
             setScore(score+1);
         }
-        else if(away == match.score.fullTime.away){
+        else if(away === match.score.fullTime.away){
             setSuccessText("You Guessed The Away Score Right!");
             setScore(score+1);
         }
     }
 
     React.useEffect(() => {
-        if(data.length == 0 ){
+        if(data.length === 0 ){
             getMatchData();
         }
     }, [data])
-
-    React.useEffect(() =>{
-        
-    }, [])
 
     const getMatchData = () =>{
         const rawData = JSON.parse(JSON.stringify(MatchData));
@@ -94,7 +89,7 @@ export function MatchCard(props){
                         <h4 id="MatchCard1Team1">
                             {!match ? "Team 1": match.homeTeam.name}
                         </h4>
-                        <img className="ClubLogo" id="MatchHomeTeam1" src={!data ? "" :match.homeTeam.crest}/>
+                        <img className="ClubLogo" id="MatchHomeTeam1" src={!data ? "" :match.homeTeam.crest} alt="alt"/>
                     </div>
                     <div>
                         <h4>
@@ -136,7 +131,7 @@ export function MatchCard(props){
                         <h4 id="MatchCard1Team2"s>
                         {!match ? "Team 2": match.awayTeam.name}
                         </h4>
-                        <img className="ClubLogo" id="MatchAwayTeam1" src={!data ? "" :match.awayTeam.crest}/>
+                        <img className="ClubLogo" id="MatchAwayTeam1" src={!data ? "" :match.awayTeam.crest} alt="alt"/>
                     </div>
                 </div>
                 <button onClick={goToNextGame}>Next Game</button>

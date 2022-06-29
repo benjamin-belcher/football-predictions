@@ -15,16 +15,16 @@ export function Header(){
             <div className="logos"> 
                 <br/>
                     <div className="logo">
-                        <img src={Facebook} className="img"/>
+                        <img src={Facebook} className="img"alt="alt"/>
                     </div>
                     <div className="logo">
-                        <img src={Instagram} className="img"/>
+                        <img src={Instagram} className="img" alt="alt"/>
                     </div>
                     <div className="logo">
-                        <img src={Twitter} className="img"/>
+                        <img src={Twitter} className="img" alt="alt"/>
                     </div>
                     <div className="logo">
-                        <img src={Youtube} className="img"/>
+                        <img src={Youtube} className="img" alt="alt"/>
                     </div>
             </div>
         </div>
