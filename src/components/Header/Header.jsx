@@ -7,6 +7,9 @@ import Youtube from '../../assets/Youtube.png';
 import homepageicon from '../../assets/homepageicon.svg';
 
 export function Header(){
+    facebookLink=async()=>{
+        Linking.openURL("www.Facebook.com")
+    }
     return(
         <div className="header">
             <div className="logo">
@@ -15,7 +18,7 @@ export function Header(){
             <div className="logos"> 
                 <br/>
                     <div className="logo">
-                        <img src={Facebook} href="www.facebook.com" className="img"alt="alt"/>
+                        <img src={Facebook} href="www.facebook.com" onPress={this.facebookLink} className="img"alt="alt"/>
                     </div>
                     <div className="logo">
                         <img src={Instagram} href="www.instagram.com" className="img" alt="alt"/>
