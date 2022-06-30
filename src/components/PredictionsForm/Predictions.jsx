@@ -18,8 +18,8 @@ export function Predictions(props){
 
     return(
         <div className="MatchWeek1Total">
-            <input className="FullWidthInput" type="number" placeholder="Predicted Home Score" required value={predictedHome} onChange={(e)=> {handlePredictedHome(e)}}/>
-            <input className="FullWidthInput" type="number" placeholder="Predicted Away Score" required value={predictedAway} onChange={(e)=>{handlePredictedAway(e)}}/>
+            <input className="FullWidthInput" type="number" min="0" placeholder="Predicted Home Score" required value={predictedHome} onChange={(e)=> {handlePredictedHome(e)}}/>
+            <input className="FullWidthInput" type="number" min="0" placeholder="Predicted Away Score" required value={predictedAway} onChange={(e)=>{handlePredictedAway(e)}}/>
             <button className="FullWidthInput" onClick={handleClick}>
                 See Scores
             </button>

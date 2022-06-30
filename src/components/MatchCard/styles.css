@@ -39,6 +39,7 @@
     border-radius: 10px;
     padding:6px;
     margin: 6px;
+    width: 532px;
 }
 
 .failureText{
@@ -47,6 +48,7 @@
     border-radius: 10px;
     padding:6px;
     margin: 6px;
+    width: 532px;
 }
 
 .messageHeader{
