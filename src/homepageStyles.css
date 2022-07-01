@@ -11,7 +11,7 @@
 .TotalPointsCircle{
     border-radius: 50%;
     border-color: #3D195B;
-    border-width: 2px;
+    border-width: 5px;
     height: 100px;
     width: 100px;
     border-style: solid;
@@ -28,9 +28,35 @@
 .TopDiv{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    z-index: 2;
+    background-color: #c8ffe4;
 }
 .PremierLeagueDiv{
     display: flex;
-
+    text-decoration: none;
+}
+.trophy{
+    width: 100%;
+}
+.Wild{
+    display: block;
+    padding: auto;
+    width: 56%
+}
+.Content{
+    display: inline-flex;
+}
+.football{
+    width: 100%;
+}
+.trophyContainer{
+    width: 22%;
+    max-width: 22%;
+    padding: 50px;
+    padding-top: 0px;
+}
+.footballContainer{
+    width: 22%;
+    max-width: 22%;
+    padding-top: 50px;
 }

@@ -26,18 +26,49 @@ export function MatchCard(props){
     }, [score])
 
     const compareScores = (home, away) => {
-        debugger;
+        console.log(match)
+        var tempScore=0;
         if(home == match.score.fullTime.home && away == match.score.fullTime.away){
-            setSuccessText("You Guessed Both Scores Right!");
-            setScore(score+2);
+            setSuccessText("You Guessed Perfectly - 5 Points!");
+            tempScore=4
         }
         else if(home == match.score.fullTime.home){
-            setSuccessText("You Guessed The Home Score Right!");
-            setScore(score+1);
+            if(winner(home, away)==1){
+                setSuccessText("You guessed the home score and outcome correctly - 2 Points!")
+            }
+            else{
+                setSuccessText("You guessed the home score right but not the outcome - 1 Point!");
+            }
+            tempScore=1
         }
         else if(away == match.score.fullTime.away){
-            setSuccessText("You Guessed The Away Score Right!");
-            setScore(score+1);
+            if(winner(home, away)==1){
+                setSuccessText("You guessed the away score and outcome correctly - 2 Points!")
+            }
+            else{
+                setSuccessText("You guessed the away score right but not the outcome - 1 Point!");
+            }
+            tempScore=1
+        }
+        else{
+            setSuccessText("You only guessed the outcome corectly - 1 Point!")
+        }
+        tempScore+=winner(home, away)
+        setScore(score+tempScore)
+    }
+    function winner(home, away){
+        var winner=match.score.winner
+        if(home>away && winner=="HOME_TEAM"){
+            return 1
+        }
+        else if(home<away && winner=="AWAY_TEAM"){
+            return 1
+        }
+        else if(home==away && winner=="DRAW"){
+            return 1
+        }
+        else{
+            return 0
         }
     }
 
@@ -69,7 +100,7 @@ export function MatchCard(props){
         setShowActualScore(false);
         getNewMatchData(data);
     }
-    return(
+    return(    
         <>
         {!match ? <> No Match </> : 
                 <>
@@ -77,7 +108,7 @@ export function MatchCard(props){
                 score > 0 ? 
                 <div className="successText">
                     <h4 className="messageHeader">{successText}</h4>
-                    <h6 className="messageBody">You have been awarded {score} points</h6>
+                    <h6 className="messageBody"></h6>
                 </div>
                 : 
                 <div className="failureText">
@@ -97,7 +128,7 @@ export function MatchCard(props){
                         <img className="ClubLogo" id="MatchHomeTeam1" src={!data ? "" :match.homeTeam.crest} alt="alt"/>
                     </div>
                     <div>
-                        <h4>
+                        <h4 className="Versus">
                             Vs
                         </h4>
                         <div className="Scores">
@@ -139,7 +170,7 @@ export function MatchCard(props){
                         <img className="ClubLogo" id="MatchAwayTeam1" src={!data ? "" :match.awayTeam.crest} alt="alt"/>
                     </div>
                 </div>
-                <button onClick={goToNextGame}>Next Game</button>
+                <button className="nextGameButton" onClick={goToNextGame}>Next Game</button>
                 </>
         }  
         </>

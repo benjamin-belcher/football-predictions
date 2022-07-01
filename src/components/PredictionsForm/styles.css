@@ -1,6 +1,11 @@
 .MatchWeek1Total{
-    width: 530px;
     display: flex;
+}
+.MatchWeek1Total input{
+    background-color: #feff87;
+}
+.MatchWeek1Total button{
+    background-color: #ebed14;
 }
 .FullWidthInput{
     width: 100%;
